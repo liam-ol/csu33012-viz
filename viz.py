@@ -21,3 +21,16 @@ def is_employee(user):
         return True
     else:
         return False
+
+# process_user: Given an entry in the repo's contributors list, process it into a database entry.
+def process_user(contributor):
+    # Gather data from contributor.
+    name = contributor.login
+    employed = is_employee(name)
+    contribs = contributor.contributions
+    # Pack this data into a dictionary.
+    userdict = {"name": name, "employed": employed, "contribs": contribs}
+    # Convert this dict to a json object.
+    return json.dumps(userdict)
+
+

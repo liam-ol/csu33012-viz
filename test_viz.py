@@ -14,3 +14,9 @@ class Test(TestCase):
         self.assertTrue(viz.is_employee(users[1]))
         self.assertFalse(viz.is_employee(users[2]))
 
+    def test_process_user(self):
+        # Test on a certain user.
+        user = viz.vscode.get_contributors()[0]
+        # Hard to test reliably, because a user's contributions count will increase over time.
+        # We'll just check the first two entries.
+        self.assertTrue('{"name": "bpasero", "employed": true, "contribs":' in viz.process_user(user))
