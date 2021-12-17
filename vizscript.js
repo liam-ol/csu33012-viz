@@ -25,9 +25,21 @@ function totalEmployeeContribs(db) {
     return result;
 }
 
+// listEmployed: Returns an array of the employed status of all users.
+function listEmployed(db) {
+    return db['database'].map(user => user['employed']);
+}
+
+// listContribs: Returns an array of the contribution number of all users.
+function listContribs(db) {
+    return db['database'].map(user => user['contribs']);
+}
+
 const employeeRatio = [totalEmployees(db), db['database'].length - totalEmployees(db)];
 const employeeContribRatio = [totalEmployeeContribs(db), totalContribs(db)-totalEmployeeContribs(db)];
 
 console.log("Number of contributions: " + totalContribs(db));
 console.log("Number of Microsoft employees: " + totalEmployees(db) + "/" + db['database'].length);
 console.log("Number of Microsoft employee contributions: " + totalEmployeeContribs(db));
+console.log(listEmployed(db));
+console.log(listContribs(db));
