@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <script src="https://d3js.org/d3.v7.min.js"></script>
-    <script type="module" src="vizscript.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.6.2/dist/chart.min.js"></script>
+    <script src="vizscript.js"></script>
     <style>
         body {
             background-color: white;
@@ -54,7 +54,7 @@
                 <p><em>Fig. a).</em> A small list of statistics.</p>
             </div>
             <div class="graphbox" style="flex-grow:2">
-                <div id="piechart"></div>
+                <svg id="piechart" width="300px" height="300px"></svg>
                 <p><em>Fig. b).</em> A large central pie chart of employee contributions vs. outsider contributions.</p>
             </div>
             <div class="graphbox">
@@ -70,6 +70,5 @@
         </div>
         <p><em>Data collected using Python and the GitHub API.</em></p>
     </div>
-
 </body>
 </html>

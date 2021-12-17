@@ -18,6 +18,8 @@ d3.json("db.json").then(function(db) {
         return result;
     }
 
+    const employeeRatio = [totalEmployees(db), db['database'].length - totalEmployees(db)];
+
     console.log("Number of contributions: " + totalContribs(db));
     console.log("Number of Microsoft employees: " + totalEmployees(db) + "/" + db['database'].length);
 })
