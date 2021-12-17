@@ -14,8 +14,8 @@ All contributors to the VS Code repo are available for easy access with the Gith
 
 The code sorts through each contributor, logging their number of contributions and their affiliation with Microsoft. It returns a JSON database with the following style: ``{name:(string), employee:(bool), contribs:(int)}``
 
-Note that GitHub's API restricts the number of contributors it returns - currently it only shows the top 365 contributors.
+Note that GitHub's API restricts the number of contributors it returns - currently it only shows the top 365 contributors. This limits our sample to users with at least 3 contributions, but should not change the visualised result too much.
 
 ### Visualisation
 
-To be decided.
+The JSON data will be displayed on a web page through a series of pie charts.
