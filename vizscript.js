@@ -32,9 +32,12 @@ function listProps(db, property) {
 
 const employeeRatio = [totalEmployees(db), db['database'].length - totalEmployees(db)];
 const employeeContribRatio = [totalEmployeeContribs(db), totalContribs(db)-totalEmployeeContribs(db)];
+const listNames = listProps(db,'name');
+const listEmployed = listProps(db,'employed');
+const listContribs = listProps(db,'contribs');
 
 console.log("Number of contributions: " + totalContribs(db));
 console.log("Number of Microsoft employees: " + totalEmployees(db) + "/" + db['database'].length);
 console.log("Number of Microsoft employee contributions: " + totalEmployeeContribs(db));
-console.log(listEmployed(db));
-console.log(listContribs(db));
+console.log(listProps(db,'employed'));
+console.log(listProps(db,'contribs'));
