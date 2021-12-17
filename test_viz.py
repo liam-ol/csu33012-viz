@@ -17,6 +17,8 @@ class Test(TestCase):
     def test_process_user(self):
         # Test on a certain user.
         user = viz.vscode.get_contributors()[0]
-        # Hard to test reliably, because a user's contributions count will increase over time.
-        # We'll just check the first two entries.
-        self.assertTrue('{"name": "bpasero", "employed": true, "contribs":' in viz.process_user(user))
+        userdict = viz.process_user(user)
+        self.assertEquals(userdict.get('name'), "bpasero")
+        self.assertTrue(userdict.get('employed'))
+        # Tricky to test contribs, because it is always updating. Just check if it's an int.
+        self.assertTrue(isinstance(userdict.get('contribs'), int))
