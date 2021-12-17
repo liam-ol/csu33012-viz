@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
     <style>
         body {
             background-color: white;
@@ -40,7 +41,7 @@
     <div class="textbox" style="max-width:1000px">
         <p>CSU33012 - SOFTWARE ENGINEERING - GITHUB API VISUALISATION PROJECT</p>
         <h1>BIG TECH OPEN SOURCE: <em>EMPLOYEES vs. THE WORLD</em></h1>
-        <p>LIAM O LIONAIRD [19335530]</p>
+        <p>by LIAM O LIONAIRD [19335530] - December 2021</p>
     </div>
 
     <br />
@@ -49,13 +50,19 @@
         <p><em>An analysis of Microsoft's</em> Visual Studio Code <em>GitHub repository.</em></p>
         <div class="graphcont">
             <div class="graphbox">
-                <em>Fig. a).</em> A small bar chart of contributors by person, with Microsoft employees highlighted.
+                <em>Fig. a).</em> A small list of statistics.
             </div>
-            <div class="graphbox">
+            <div class="graphbox" style="flex-grow:2">
                 <em>Fig. b).</em> A large central pie chart of employee contributions vs. outsider contributions.
             </div>
             <div class="graphbox">
                 <em>Fig. c).</em> A small list of other statistics.
+            </div>
+        </div>
+
+        <div class="graphcont">
+            <div class="graphbox">
+                <em>Fig. d).</em> A wide bar chart ranking user contributions, with Microsoft employees highlighted.
             </div>
         </div>
         <p><em>Data collected using Python and the GitHub API.</em></p>
