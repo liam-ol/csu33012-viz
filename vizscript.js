@@ -26,7 +26,7 @@ function totalEmployeeContribs(db) {
 }
 
 const employeeRatio = [totalEmployees(db), db['database'].length - totalEmployees(db)];
-const employeeContribRatio = [totalEmployeeContribs(db), totalContribs(db)];
+const employeeContribRatio = [totalEmployeeContribs(db), totalContribs(db)-totalEmployeeContribs(db)];
 
 console.log("Number of contributions: " + totalContribs(db));
 console.log("Number of Microsoft employees: " + totalEmployees(db) + "/" + db['database'].length);

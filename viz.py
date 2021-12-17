@@ -47,4 +47,4 @@ def write_database():
     db.write(json.dumps(database, indent=2))
 
 
-write_database()
+write_database()    # <- Comment this when running tests, unless you want to be here all day.
