@@ -18,4 +18,4 @@ Note that GitHub's API restricts the number of contributors it returns - current
 
 ### Visualisation
 
-The JSON data is displayed on the `vizdoc.html` web page using a series of pie charts.
+Various information about the database is visualised on the `vizdoc.html` web page using a series of charts, enabled by [Chart.js](https://www.chartjs.org/). Simply open the HTML file to view the presentation.
