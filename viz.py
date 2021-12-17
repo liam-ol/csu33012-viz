@@ -21,7 +21,7 @@ def is_employee(user):
     else:
         return False
 
-# process_user: Given an entry in the repo's contributors list, process it into a database entry.
+# process_user: Given an entry in the repo's contributors list, process data and return a JSON database object.
 def process_user(contributor):
     # Gather data from contributor.
     name = contributor.login
@@ -29,8 +29,19 @@ def process_user(contributor):
     contribs = contributor.contributions
     # Pack this data into a dictionary.
     userdict = {"name": name, "employed": employed, "contribs": contribs}
-    # Convert this dict to a json object.
+    # Convert this dict to a JSON object.
     return json.dumps(userdict)
 
-# TODO: FUNCTION TO CREATE JSON DATABASE
-# def write_database():
+# write_database: Given a list of contributors, write a JSON database file we can use.
+def write_database():
+    # Writes into "db.json". (Creates if it doesn't exist.) Automatically clears file.
+    db = open("db.json", "w")
+
+    user_count = 0
+    total_users = vscode.get_contributors().totalCount
+    for user in vscode.get_contributors():
+        db.write(process_user(user) + '\n')
+        user_count += 1
+        print(f"[{user_count}/{total_users}]  User {user.login} processed.")
+
+write_database()
