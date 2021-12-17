@@ -10,7 +10,7 @@ With the acquiring of Github by Microsoft, big tech's interest and investment in
 
 ### API
 
-All contributors to the VS Code repo are available for easy access with the Github API, as well as their number of contributions. It is also possible to detect whether a user is a member of Microsoft's GitHub 'organisation' (i.e. whether they are an employee). The code sorts through each contributor, logging their number of contributions and their affiliation with Microsoft.
+All contributors to the VS Code repo are available for easy access with the Github API, as well as their number of contributions. It is also possible to detect whether a user is a member of Microsoft's GitHub 'organisation' (i.e. whether they are an employee). The code sorts through each contributor, logging their number of contributions and their affiliation with Microsoft. It returns a JSON database with the following style: ``{name:"liam", employee:"false", contribs:"5"}``
 
 ### Visualisation
 
