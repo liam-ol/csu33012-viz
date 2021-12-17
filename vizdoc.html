@@ -5,18 +5,34 @@
     <title>Title</title>
     <style>
         body {
-            background-color:white;
-            font-family:"arial",sans-serif;
-            padding:5px;
+            background-color: white;
+            font-family: "arial", sans-serif;
+            padding: 5px;
         }
 
         .textbox {
-            margin-left:auto;
-            margin-right:auto;
-            text-align:center;
-            background-color:white;
-            border:1px solid black;
-            padding:15px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+            background-color: white;
+            border: 1px solid black;
+            padding: 15px;
+        }
+
+        .graphcont {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+
+            margin: 30px;
+        }
+
+        .graphbox {
+            flex:1;
+
+            border: 1px solid black;
+            padding:30px;
+            margin:20px;
         }
     </style>
 </head>
@@ -31,7 +47,17 @@
     <br />
 
     <div class="textbox" style="max-width:1500px; height:500px">
-        <h1>[ GRAPHS GO HERE ]</h1>
+        <div class="graphcont">
+            <div class="graphbox">
+                <em>Fig. a).</em> A small bar chart of contributors by person, with Microsoft employees highlighted.
+            </div>
+            <div class="graphbox">
+                <em>Fig. b).</em> A large central pie chart of employee contributions vs. outsider contributions.
+            </div>
+            <div class="graphbox">
+                <em>Fig. c).</em> A small list of other statistics.
+            </div>
+        </div>
     </div>
 
 </body>
