@@ -25,14 +25,9 @@ function totalEmployeeContribs(db) {
     return result;
 }
 
-// listEmployed: Returns an array of the employed status of all users.
-function listEmployed(db) {
-    return db['database'].map(user => user['employed']);
-}
-
-// listContribs: Returns an array of the contribution number of all users.
-function listContribs(db) {
-    return db['database'].map(user => user['contribs']);
+// listProps: Returns an array of a given property of all database entries.
+function listProps(db, property) {
+    return db['database'].map(user => user[property]);
 }
 
 const employeeRatio = [totalEmployees(db), db['database'].length - totalEmployees(db)];
