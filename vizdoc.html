@@ -13,6 +13,10 @@
             padding: 10px;
         }
 
+        a {
+            color: black;
+        }
+
         .textbox {
             margin-left: auto;
             margin-right: auto;
@@ -31,7 +35,6 @@
 
         .graphbox {
             flex:1;
-
             border: 1px solid black;
             padding:30px;
             margin:20px;
@@ -49,13 +52,13 @@
     <br />
 
     <div class="textbox" style="max-width:1500px">
-        <p><em>An analysis of Microsoft's</em> Visual Studio Code <em>GitHub repository.</em></p>
+        <p><em>An analysis of Microsoft's</em> <a href="https://github.com/microsoft/vscode">Visual Studio Code</a> <em>GitHub repository.</em></p>
         <div class="graphcont">
             <div class="graphbox">
                 <p><em>Fig. a).</em> A small list of statistics.</p>
             </div>
             <div class="graphbox" style="flex-grow:2">
-                <p>Despite only representing <b id="microsoftpercent"></b> of the top contributors, Microsoft employees are responsible for <b id="contribpercent"></b> of contributions made to the project.</p>
+                <p>Despite only representing <b id="microsoftpercent"></b> of the top contributors, Microsoft employees make <b id="contribpercent"></b> of all contributions to the project.</p>
                 <canvas id="pieChart"></canvas>
             </div>
             <div class="graphbox">
@@ -77,6 +80,7 @@
         document.getElementById("contribpercent").textContent = (totalEmployeeContribs(db) / totalContribs(db) * 100).toPrecision(3) + "%";
 
         // Chart rendering
+        Chart.defaults.color = "black";
         const pie = document.getElementById("pieChart").getContext('2d');
         const pieChart = new Chart(pie, {
             type: "pie",
