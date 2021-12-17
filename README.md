@@ -12,10 +12,10 @@ With the acquiring of Github by Microsoft, big tech's interest and investment in
 
 All contributors to the VS Code repo are available for easy access with the Github API, as well as their number of contributions. It is also possible to detect whether a user is a member of Microsoft's GitHub 'organisation' (i.e. whether they are an employee). 
 
-The code sorts through each contributor, logging their number of contributions and their affiliation with Microsoft. It returns a JSON database with the following style: ``{name:(string), employee:(bool), contribs:(int)}``
+The code in `viz.py` sorts through each contributor, logging their number of contributions and their affiliation with Microsoft. It returns a JSON database with the following style: ``{name:(string), employed:(bool), contribs:(int)}``
 
 Note that GitHub's API restricts the number of contributors it returns - currently it only shows the top 365 contributors. This limits our sample to users with at least 3 contributions, but should not change the visualised result too much.
 
 ### Visualisation
 
-The JSON data will be displayed on a web page through a series of pie charts.
+The JSON data is displayed on the `vizdoc.html` web page using a series of pie charts.
