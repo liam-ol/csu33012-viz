@@ -16,10 +16,10 @@ vscode = git.get_repo("microsoft/vscode")
 def is_employee(user):
     # Usually an employee is a member of Microsoft's GitHub 'organisation'.
     # Sometimes they are not, but have 'Microsoft' listed as their 'company' on their user page.
-    if microsoft.has_in_members(git.get_user(user)) or "microsoft" in git.get_user(user).company.lower():
-        return True
+    if git.get_user(user).company is not None:
+        return "microsoft" in git.get_user(user).company.lower()
     else:
-        return False
+        return microsoft.has_in_members(git.get_user(user))
 
 # process_user: Given an entry in the repo's contributors list, process data and return a JSON database object.
 def process_user(contributor):
