@@ -29,19 +29,22 @@ def process_user(contributor):
     contribs = contributor.contributions
     # Pack this data into a dictionary.
     userdict = {"name": name, "employed": employed, "contribs": contribs}
-    # Convert this dict to a JSON object.
-    return json.dumps(userdict)
+    return userdict
 
 # write_database: Given a list of contributors, write a JSON database file we can use.
 def write_database():
-    # Writes into "db.json". (Creates if it doesn't exist.) Automatically clears file.
-    db = open("db.json", "w")
     # Track number of users processed.
-    user_count = 0
     total_users = vscode.get_contributors().totalCount
+    user_list = []
+    # First compose a list of contributor dicts.
     for user in vscode.get_contributors():
-        db.write(process_user(user) + '\n')
-        user_count += 1
-        print(f"[{user_count}/{total_users}]  User {user.login} processed.")
+        user_list.append(process_user(user))
+        print(f"[{len(user_list)}/{total_users}]  User {user_list[len(user_list) - 1].get('name')} processed.")
+        # (Complicated, but saves an unneeded API call.)
+    database = {"database": user_list}
+    # Write into "db.json". (Creates if it doesn't exist + automatically clears file.)
+    db = open("db.json", "w")
+    db.write(json.dumps(database, indent=""))
+
 
 write_database()
