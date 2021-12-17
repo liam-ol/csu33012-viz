@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script type="module" src="vizscript.js"></script>
     <style>
         body {
             background-color: white;
@@ -50,19 +51,21 @@
         <p><em>An analysis of Microsoft's</em> Visual Studio Code <em>GitHub repository.</em></p>
         <div class="graphcont">
             <div class="graphbox">
-                <em>Fig. a).</em> A small list of statistics.
+                <p><em>Fig. a).</em> A small list of statistics.</p>
             </div>
             <div class="graphbox" style="flex-grow:2">
-                <em>Fig. b).</em> A large central pie chart of employee contributions vs. outsider contributions.
+                <div id="piechart"></div>
+                <p><em>Fig. b).</em> A large central pie chart of employee contributions vs. outsider contributions.</p>
             </div>
             <div class="graphbox">
-                <em>Fig. c).</em> A small list of other statistics.
+                <p><em>Fig. c).</em> A small list of other statistics.</p>
             </div>
         </div>
 
         <div class="graphcont">
             <div class="graphbox">
-                <em>Fig. d).</em> A wide bar chart ranking user contributions, with Microsoft employees highlighted.
+                <div id="barchart"></div>
+                <p><em>Fig. d).</em> A wide bar chart ranking user contributions, with Microsoft employees highlighted.</p>
             </div>
         </div>
         <p><em>Data collected using Python and the GitHub API.</em></p>
