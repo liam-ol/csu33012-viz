@@ -40,8 +40,9 @@ def write_database():
         print(f"[{len(user_list)}/{total_users}]  User {user_list[len(user_list) - 1].get('name')} processed.")
         # (Complicated, but saves an unneeded API call.)
     database = {"database": user_list}
-    # Write into "db.json". (Creates if it doesn't exist + automatically clears file.)
-    db = open("db.json", "w")
+    # Write into "db.js". (Creates if it doesn't exist + automatically clears file.)
+    db = open("db.js", "w")
+    db.write("var db = ")
     db.write(json.dumps(database, indent=2))
 
 
