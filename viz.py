@@ -36,7 +36,7 @@ def process_user(contributor):
 def write_database():
     # Writes into "db.json". (Creates if it doesn't exist.) Automatically clears file.
     db = open("db.json", "w")
-
+    # Track number of users processed.
     user_count = 0
     total_users = vscode.get_contributors().totalCount
     for user in vscode.get_contributors():
