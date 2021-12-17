@@ -1,3 +1,5 @@
+// Some functions to work with the database.
+
 // totalContribs: Returns the sum of all contributions in the database.
 function totalContribs(db) {
     let result = 0;

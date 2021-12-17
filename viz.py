@@ -41,6 +41,7 @@ def write_database():
         # (Complicated, but saves an unneeded API call.)
     database = {"database": user_list}
     # Write into "db.js". (Creates if it doesn't exist + automatically clears file.)
+    # We must convert this database to a JavaScript file for use with our visualisation.
     db = open("db.js", "w")
     db.write("var db = ")
     db.write(json.dumps(database, indent=2))
