@@ -8,7 +8,7 @@
     <script src="vizscript.js"></script>
     <style>
         body {
-            background-color: white;
+            background-color: lightgrey;
             font-family: "arial", sans-serif;
             padding: 10px;
         }
@@ -88,9 +88,9 @@
                 datasets: [{
                     data: employeeContribRatio,
                     backgroundColor: [
-                        "black", "white"
+                        "black", "lightgrey"
                     ],
-                    borderColor: ["black"]
+                    borderWidth:0
                 }],
                 labels:['Microsoft','Others']
             },
@@ -106,13 +106,13 @@
             data: {
                 datasets: [{
                     data: listContribs,
-                    //backgroundColor: listEmployed.map(x => x ? "black" : "white"),
-                    //borderColor:"black",
-                    //borderWidth:1
+                    backgroundColor: listEmployed.map(x => x ? "black" : "lightgrey")
                 }],
                 labels:listNames
             },
             options: {
+                barPercentage:1.0,
+                categoryPercentage:1.0,
                 plugins: {
                     legend: {
                         display: false
