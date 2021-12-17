@@ -68,7 +68,7 @@
 
         <div class="graphcont">
             <div class="graphbox">
-                <canvas id="barChart"></canvas>
+                <canvas id="barChart" style="width:100%"></canvas>
                 <p><em>Fig. d).</em> A wide bar chart ranking user contributions, with Microsoft employees highlighted.</p>
             </div>
         </div>
@@ -90,8 +90,7 @@
                     backgroundColor: [
                         "black", "white"
                     ],
-                    borderColor: ["black"],
-                    borderWidth: 1
+                    borderColor: ["black"]
                 }],
                 labels:['Microsoft','Others']
             },
@@ -100,7 +99,38 @@
                     animateRotate: false
                 }
             }
-        })
+        });
+        const bar = document.getElementById("barChart").getContext('2d');
+        const barChart = new Chart(bar, {
+            type: "bar",
+            data: {
+                datasets: [{
+                    data: listContribs,
+                    //backgroundColor: listEmployed.map(x => x ? "black" : "white"),
+                    //borderColor:"black",
+                    //borderWidth:1
+                }],
+                labels:listNames
+            },
+            options: {
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                },
+                scales: {
+                    x: {
+                        ticks: {
+                            display: false
+                        },
+                    },
+                    y: {
+                        type: 'logarithmic',
+                        max:15000
+                    }
+                }
+            }
+        });
     </script>
 </body>
 </html>
