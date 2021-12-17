@@ -20,6 +20,8 @@ def is_employee(user):
         return True
     elif git.get_user(user).company is not None:
         return "microsoft" in git.get_user(user).company.lower()
+    else:
+        return False
 
 # process_user: Given an entry in the repo's contributors list, process data and return a JSON database object.
 def process_user(contributor):
@@ -44,7 +46,7 @@ def write_database():
     database = {"database": user_list}
     # Write into "db.json". (Creates if it doesn't exist + automatically clears file.)
     db = open("db.json", "w")
-    db.write(json.dumps(database, indent=""))
+    db.write(json.dumps(database, indent=2))
 
 
 write_database()
