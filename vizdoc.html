@@ -7,7 +7,7 @@
         body {
             background-color: white;
             font-family: "arial", sans-serif;
-            padding: 5px;
+            padding: 10px;
         }
 
         .textbox {
@@ -16,15 +16,14 @@
             text-align: center;
             background-color: white;
             border: 1px solid black;
-            padding: 15px;
+            padding: 30px;
         }
 
         .graphcont {
             display: flex;
             flex-direction: row;
             justify-content: space-evenly;
-
-            margin: 30px;
+            margin: 15px;
         }
 
         .graphbox {
@@ -46,7 +45,8 @@
 
     <br />
 
-    <div class="textbox" style="max-width:1500px; height:500px">
+    <div class="textbox" style="max-width:1500px">
+        <p><em>An analysis of Microsoft's</em> Visual Studio Code <em>GitHub repository.</em></p>
         <div class="graphcont">
             <div class="graphbox">
                 <em>Fig. a).</em> A small bar chart of contributors by person, with Microsoft employees highlighted.
@@ -58,6 +58,7 @@
                 <em>Fig. c).</em> A small list of other statistics.
             </div>
         </div>
+        <p><em>Data collected using Python and the GitHub API.</em></p>
     </div>
 
 </body>
