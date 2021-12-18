@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Software Engineering Metric Visualisation</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@3.6.2/dist/chart.min.js"></script>
     <script src="db.js"></script>
     <script src="vizscript.js"></script>
@@ -24,6 +24,11 @@
             background-color: white;
             border: 1px solid black;
             padding: 30px;
+        }
+
+        .bigdata {
+            font-weight:bold;
+            font-size: 36pt;
         }
 
         .graphcont {
@@ -55,7 +60,19 @@
         <p><em>An analysis of Microsoft's</em> <a href="https://github.com/microsoft/vscode">Visual Studio Code</a> <em>GitHub repository.</em></p>
         <div class="graphcont">
             <div class="graphbox">
-                <p><em>Fig. a).</em> A small list of statistics.</p>
+                <p>With the acquiring of Github by Microsoft, coupled with many other corporate ventures into open-source development, big tech's interest and investment in free and open software engineering has been loudly established in the wider world of the discipline.</p>
+
+                <p>But just how 'open' are big tech's new open-source projects? How much do outside contributors <em>actually</em> contribute in comparison to employees?</p>
+
+                <p>This visualisation analyses contributors to a long-running and popular open-source software from Microsoft, <em>Visual Studio Code</em>. It compares employee contributions with outsider contributions, and presents the results.</p>
+
+                <br><hr /><br>
+
+                <p>TOTAL CONTRIBUTORS</p>
+                <span class="bigdata">365</span>
+
+                <p>NO. OF EMPLOYEES</p>
+                <span class="bigdata">77</span>
             </div>
             <div class="graphbox" style="flex-grow:2">
                 <p>Despite only representing <b id="microsoftpercent"></b> of the top contributors, Microsoft employees make <b id="contribpercent"></b> of all contributions to the project.</p>
@@ -68,7 +85,8 @@
 
         <div class="graphcont">
             <div class="graphbox">
-                <p>Microsoft employees (highlighted in black) account for all of the top 20 contributors, far outstripping their open-source volunteers, as shown on this logarithmic chart.</p>
+                <p>Microsoft employees (highlighted in black) account for all of the top 20 contributors, far outstripping their open-source volunteers.</p>
+                <p>(This chart has a logarithmic scale; otherwise, the remaining users would barely be visible.)</p>
                 <canvas id="barChart" style="width:100%"></canvas>
             </div>
         </div>
@@ -86,6 +104,7 @@
             type: "pie",
             data: {
                 datasets: [{
+                    label: 'Contributions',
                     data: employeeContribRatio,
                     backgroundColor: [
                         "black", "lightgrey"
@@ -103,6 +122,7 @@
             type: "bar",
             data: {
                 datasets: [{
+                    label: 'Contributions',
                     data: listContribs,
                     backgroundColor: listEmployed.map(x => x ? "black" : "lightgrey")
                 }],
