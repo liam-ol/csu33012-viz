@@ -26,11 +26,6 @@
             padding: 30px;
         }
 
-        .bigdata {
-            font-weight:bold;
-            font-size: 36pt;
-        }
-
         .graphcont {
             display: flex;
             flex-direction: row;
@@ -69,33 +64,43 @@
                 <br><hr /><br>
 
                 <p>TOTAL CONTRIBUTORS</p>
-                <span class="bigdata">365</span>
-
-                <p>NO. OF EMPLOYEES</p>
-                <span class="bigdata">77</span>
+                <h1 id="totalcontributors"></h1>
+                <br>
+                <p>NUMBER OF EMPLOYEES</p>
+                <h1 id="totalemployees"></h1>
             </div>
             <div class="graphbox" style="flex-grow:2">
-                <p>Despite only representing <b id="microsoftpercent"></b> of the top contributors, Microsoft employees make <b id="contribpercent"></b> of all contributions to the project.</p>
+                <p>Despite only representing <b id="microsoftpercent"></b> of the top contributors, Microsoft employees make <b id="contribpercent"></b> of all contributions to the project.</p><br>
                 <canvas id="pieChart"></canvas>
             </div>
             <div class="graphbox">
-                <p><em>Fig. c).</em> A small list of other statistics.</p>
+                <p>TOTAL CONTRIBUTIONS</p>
+                <h1 id="totalcontributions"></h1>
+                <br>
+                <p>EMPLOYEE CONTRIBUTIONS</p>
+                <h1 id="employeecontributions"></h1>
+                <hr>
             </div>
         </div>
 
         <div class="graphcont">
             <div class="graphbox">
-                <p>Microsoft employees (highlighted in black) account for all of the top 20 contributors, far outstripping their open-source volunteers.</p>
-                <p>(This chart has a logarithmic scale; otherwise, the remaining users would barely be visible.)</p>
+                <p>Microsoft employees (highlighted in black) account for all of the top 20 contributors, far outstripping their open-source volunteers.<br>
+                    (This chart has a logarithmic scale; otherwise, the remaining users would barely be visible.)</p>
+                <p>Mouse over the bars to view more data about each user.</p>
                 <canvas id="barChart" style="width:100%"></canvas>
             </div>
         </div>
-        <p><em>Data collected using Python and the GitHub API.</em></p>
+        <p><em>Data collected using Python and the GitHub API. Visualised using <a href="https://www.chartjs.org/">Chart.js</a>.</em></p>
     </div>
 
     <script>
         document.getElementById("microsoftpercent").textContent = (totalEmployees(db) / db['database'].length * 100).toPrecision(3) + "%";
         document.getElementById("contribpercent").textContent = (totalEmployeeContribs(db) / totalContribs(db) * 100).toPrecision(3) + "%";
+        document.getElementById("totalcontributors").textContent = db['database'].length;
+        document.getElementById("totalemployees").textContent = totalEmployees(db);
+        document.getElementById("totalcontributions").textContent = totalContribs(db);
+        document.getElementById("employeecontributions").textContent = totalEmployeeContribs(db);
 
         // Chart rendering
         Chart.defaults.color = "black";

@@ -4,7 +4,11 @@
 
 ## Concept: *Big Tech Open Source: Employees vs. The World*
 
-With the acquiring of Github by Microsoft, big tech's interest and investment in open-source development has been made loud and clear. But just how 'open' are big tech's new open-source project ventures? How much do outside contributors *actually* contribute in comparison to employees? This visualisation analyses contributors to a long-running and popular open-source project from Microsoft, [Visual Studio Code](https://github.com/microsoft/vscode). It compares employee contributions with outsider contributions, and presents the results.
+With the acquiring of Github by Microsoft, coupled with many other corporate ventures into open-source development, big tech's interest and investment in free and open software engineering has been loudly established in the wider world of the discipline.
+
+But just how 'open' are big tech's new open-source projects? How much do outside contributors *actually* contribute in comparison to employees?
+
+This visualisation analyses contributors to a long-running and popular open-source software from Microsoft, [Visual Studio Code](https://github.com/microsoft/vscode). It compares employee contributions with outsider contributions, and presents the results.
 
 ## Implementation
 
