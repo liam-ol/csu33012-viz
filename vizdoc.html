@@ -68,8 +68,8 @@
 
         <div class="graphcont">
             <div class="graphbox">
+                <p>Microsoft employees (highlighted in black) account for all of the top 20 contributors, far outstripping their open-source volunteers, as shown on this logarithmic chart.</p>
                 <canvas id="barChart" style="width:100%"></canvas>
-                <p><em>Fig. d).</em> A wide bar chart ranking user contributions, with Microsoft employees highlighted.</p>
             </div>
         </div>
         <p><em>Data collected using Python and the GitHub API.</em></p>
@@ -95,9 +95,7 @@
                 labels:['Microsoft','Others']
             },
             options: {
-                animation: {
-                    animateRotate: false
-                }
+                animation: false
             }
         });
         const bar = document.getElementById("barChart").getContext('2d');
@@ -111,6 +109,7 @@
                 labels:listNames
             },
             options: {
+                animation:false,
                 barPercentage:1.0,
                 categoryPercentage:1.0,
                 plugins: {
