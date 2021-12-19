@@ -32,9 +32,9 @@ function listProps(db, property) {
 
 const employeeRatio = [totalEmployees(db), db['database'].length - totalEmployees(db)];
 const employeeContribRatio = [totalEmployeeContribs(db), totalContribs(db)-totalEmployeeContribs(db)];
-const listNames = listProps(db,'name');
 const listEmployed = listProps(db,'employed');
 const listContribs = listProps(db,'contribs');
+const listNames = listEmployed.map(status => status ? 'Microsoft Employee' : 'Other User')
 
 const microsoftPercent = (totalEmployees(db) / db['database'].length * 100).toPrecision(3);
 const contribPercent = (totalEmployeeContribs(db) / totalContribs(db) * 100).toPrecision(3);

@@ -25,8 +25,8 @@ def is_employee(user):
 
 # process_user: Given an entry in the repo's contributors list, process data and return a dictionary.
 def process_user(contributor):
-    return {"name": contributor.login,
-            "employed": is_employee(contributor.login),
+    # Names are no longer returned to preserve anonymity.
+    return {"employed": is_employee(contributor.login),
             "contribs": contributor.contributions}
 
 # write_database: Given a list of contributors, write a JSON database file we can use.
@@ -37,8 +37,7 @@ def write_database():
     # First compose a list of contributor dicts.
     for user in vscode.get_contributors():
         user_list.append(process_user(user))
-        print(f"[{len(user_list)}/{total_users}]  User {user_list[len(user_list) - 1].get('name')} processed.")
-        # (Complicated, but saves an unneeded API call.)
+        print(f"[{len(user_list)}/{total_users}]  User {user.login} processed.")
     database = {"database": user_list}
     # Write into "db.js". (Creates if it doesn't exist + automatically clears file.)
     # We must convert this database to a JavaScript file for use with our visualisation.
