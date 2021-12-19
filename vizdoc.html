@@ -73,13 +73,14 @@
                 <p>Despite only representing <b id="microsoftpercent"></b> of the top contributors, Microsoft employees make <b id="contribpercent"></b> of all contributions to the project.</p><br>
                 <canvas id="pieChart"></canvas>
             </div>
-            <div class="graphbox">
+            <div class="graphbox" style="position:relative">
                 <p>TOTAL CONTRIBUTIONS</p>
                 <h1 id="totalcontributions"></h1>
                 <br>
                 <p>EMPLOYEE CONTRIBUTIONS</p>
                 <h1 id="employeecontributions"></h1>
-                <hr>
+                <hr><br>
+                <canvas id="barSmall" style="width:100%; height:60%"></canvas>
             </div>
         </div>
 
@@ -95,8 +96,8 @@
     </div>
 
     <script>
-        document.getElementById("microsoftpercent").textContent = (totalEmployees(db) / db['database'].length * 100).toPrecision(3) + "%";
-        document.getElementById("contribpercent").textContent = (totalEmployeeContribs(db) / totalContribs(db) * 100).toPrecision(3) + "%";
+        document.getElementById("microsoftpercent").textContent = microsoftPercent + "%";
+        document.getElementById("contribpercent").textContent = contribPercent + "%";
         document.getElementById("totalcontributors").textContent = db['database'].length;
         document.getElementById("totalemployees").textContent = totalEmployees(db);
         document.getElementById("totalcontributions").textContent = totalContribs(db);
@@ -153,6 +154,25 @@
                         max:15000
                     }
                 }
+            }
+        });
+        const bar2 = document.getElementById("barSmall").getContext('2d');
+        const barSmall = new Chart(bar2, {
+            type: "bar",
+            data: {
+                datasets: [{
+                    label: 'Microsoft',
+                    data:[microsoftPercent,contribPercent],
+                    backgroundColor:"black"
+                },{
+                    label: 'Others',
+                    data:[100-microsoftPercent,100-contribPercent],
+                    backgroundColor:"lightgrey"
+                }],
+                labels:['% Contributors','% Contributions']
+            },
+            options: {
+                animation:false
             }
         });
     </script>

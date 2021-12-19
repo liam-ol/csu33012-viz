@@ -36,6 +36,9 @@ const listNames = listProps(db,'name');
 const listEmployed = listProps(db,'employed');
 const listContribs = listProps(db,'contribs');
 
+const microsoftPercent = (totalEmployees(db) / db['database'].length * 100).toPrecision(3);
+const contribPercent = (totalEmployeeContribs(db) / totalContribs(db) * 100).toPrecision(3);
+
 console.log("Number of contributions: " + totalContribs(db));
 console.log("Number of Microsoft employees: " + totalEmployees(db) + "/" + db['database'].length);
 console.log("Number of Microsoft employee contributions: " + totalEmployeeContribs(db));
