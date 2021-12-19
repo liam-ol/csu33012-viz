@@ -3,7 +3,7 @@ var db = {
     {
       "name": "bpasero",
       "employed": true,
-      "contribs": 10567
+      "contribs": 10571
     },
     {
       "name": "jrieken",
@@ -18,12 +18,12 @@ var db = {
     {
       "name": "mjbvz",
       "employed": true,
-      "contribs": 6546
+      "contribs": 6548
     },
     {
       "name": "alexdima",
       "employed": true,
-      "contribs": 6427
+      "contribs": 6433
     },
     {
       "name": "sandy081",
@@ -38,7 +38,7 @@ var db = {
     {
       "name": "Tyriar",
       "employed": true,
-      "contribs": 5476
+      "contribs": 5485
     },
     {
       "name": "aeschli",
@@ -98,12 +98,12 @@ var db = {
     {
       "name": "connor4312",
       "employed": true,
-      "contribs": 746
+      "contribs": 750
     },
     {
       "name": "meganrogge",
       "employed": true,
-      "contribs": 741
+      "contribs": 745
     },
     {
       "name": "octref",
@@ -118,7 +118,7 @@ var db = {
     {
       "name": "lramos15",
       "employed": true,
-      "contribs": 405
+      "contribs": 406
     },
     {
       "name": "eamodio",
@@ -1818,11 +1818,6 @@ var db = {
     {
       "name": "mxschmitt",
       "employed": true,
-      "contribs": 3
-    },
-    {
-      "name": "Meai1",
-      "employed": false,
       "contribs": 3
     }
   ]
