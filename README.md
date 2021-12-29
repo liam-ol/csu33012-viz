@@ -16,10 +16,14 @@ This visualisation analyses contributors to a long-popular open-source software 
 
 All contributors to the VS Code repo are available for easy access with the Github API, as well as their number of contributions. It is also possible to detect whether a user is a member of Microsoft's GitHub 'organisation' (i.e. whether they are an employee). 
 
-The code in `viz.py` sorts through each contributor, logging their number of contributions and their affiliation with Microsoft. It returns a JSON database with the following style: ``{employed:(bool), contribs:(int)}``. (Usernames have been anonymised.)
+The code in `viz.py` sorts through each contributor, logging their number of contributions and their affiliation with Microsoft. It returns a JSON database with the following style: `{employed:(bool), contribs:(int)}`. (Usernames have been anonymised.)
 
 Note that GitHub's API restricts the number of contributors it returns - currently it only shows the top 365 contributors. This limits our sample to users with at least 3 contributions, but should not change the visualised result too much.
 
 ### Visualisation
 
 Various information about the database is visualised on the `vizdoc.html` web page using a series of charts, enabled by [Chart.js](https://www.chartjs.org/). Simply open the HTML file to view the presentation. (Best viewed on desktop.)
+
+## Requirements
+
+[PyGithub](https://github.com/PyGithub/PyGithub) must be installed to run `viz.py`. You must also replace the `GIT_TOKEN` environment variable with your own access token. (Failing these, you can still use the pre-generated `db.js` file for the visualisation; be warned it may be outdated.)
