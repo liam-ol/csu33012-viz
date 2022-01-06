@@ -22,7 +22,7 @@ Note that GitHub's API restricts the number of contributors it returns - current
 
 ### Visualisation
 
-Various information about the database is visualised on the `index.html` web page using a series of charts, enabled by [Chart.js](https://www.chartjs.org/). Simply open the HTML file to view the presentation. (Best viewed on desktop.)
+Various information about the database is visualised on the `index.html` web page using a series of charts, enabled by [Chart.js](https://www.chartjs.org/). You can view the page online [here](https://itswilliamleonard.github.io/csu33012-viz/). (Best viewed on desktop.)
 
 ## Requirements
 
