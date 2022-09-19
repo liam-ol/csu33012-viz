@@ -2,6 +2,8 @@
 
 **by Liam O Lionaird [19335530] for CSU33012 - Software Engineering.**
 
+## [View here!](https://liam-ol.github.io/csu33012-viz/)
+
 ## Concept: *Big Tech Open Source: Employees vs. The World*
 
 With the acquiring of Github by Microsoft, coupled with many other corporate ventures into open-source development, big tech's interest and investment in free and open software engineering has been strongly established in the wider world of the discipline.
@@ -22,8 +24,8 @@ Note that GitHub's API restricts the number of contributors it returns - current
 
 ### Visualisation
 
-Various information about the database is visualised on the `index.html` web page using a series of charts, enabled by [Chart.js](https://www.chartjs.org/). You can view the page online [here](https://itswilliamleonard.github.io/csu33012-viz/). (Best viewed on desktop.)
+Various information about the database is visualised on the `index.html` web page using a series of charts, enabled by [Chart.js](https://www.chartjs.org/). You can view the page online [here](https://liam-ol.github.io/csu33012-viz/). (Best viewed on desktop.)
 
 ## Requirements
 
-[PyGithub](https://github.com/PyGithub/PyGithub) must be installed to run `viz.py`. You must also replace the `GIT_TOKEN` environment variable with your own access token. (Failing these, you can still use the pre-generated `db.js` file for the visualisation; be warned it may be outdated.)
+[PyGithub](https://github.com/PyGithub/PyGithub) must be installed to run `viz.py`. You must also replace the `GIT_TOKEN` environment variable with your own access token. (Failing these, you can still use the pre-generated `db.js` file for the visualisation; be warned it will be outdated.)
